@@ -12,52 +12,33 @@ data.forEach(function(ufoSightings) {
   
     Object.entries(ufoSightings).forEach(function([key, value]) {
       console.log(key, value);
-      // Append a cell to the row for each value
-      // in the weather report object
+
       var cell = row.append("td");
       cell.text(value);
     });
   });
 
 // // loop through the data and append the table with all sightings to the web page
-// renderTable(tableData);
+renderTable(
+    tableData);
 
 // // filtering the events by date/time
 
 // // select the buttom
+var button = d3.select("#filter-btn");
 
+// Select the form
+var form = d3.select("#form");
 
-// // select the form 
+// Create event handlers 
+button.on("click", runEnter);
+form.on("submit",runEnter);
 
+// Complete the event handler function for the form
+function runEnter() {
 
-// // create event handlers for clicking the button or pressing the enter key
-
-
-// // create the function to run for both events
-
-
-//     // prevent the page from refreshing
-
-
-//     // select the input element and get the raw HTML node
-
-
-//     // get the value property of the input element
-
-
-//     // print the value to the console
-
-
-//     // filter the data
-
-
-//     // print the values to the console
-
-
-//     // clear the existing table
-
-
-//     // loop through the data and append the table with the filtered sightings to the web page
-
-
-// };
+  // Prevent the page from refreshing
+  d3.event.preventDefault();
+  
+  // Select the input element and get the raw HTML node
+};
