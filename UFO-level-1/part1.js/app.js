@@ -12,7 +12,8 @@ data.forEach(function(ufoSightings) {
   
     Object.entries(ufoSightings).forEach(function([key, value]) {
       console.log(key, value);
-
+      // Append a cell to the row for each value
+      // in the weather report object
       var cell = row.append("td");
       cell.text(value);
     });
@@ -31,13 +32,13 @@ function runEnter() {
 
   d3.event.preventDefault();
 
-  var inputElement = d3.select("#form-control");
+  var inputElement = d3.select("#datetime").property("value");
 
   var inputValue = inputElement.property("value");
 
-  console.log(inputValue);
+  console.log(inputElement);
 
-  var filteredData = tableData.filter(ufoSightings => ufoSightings.datetime === inputValue);
+  var filteredData = tableData.filter(ufoSightings => ufoSightings.datetime === inputElement);
 
   console.log(filteredData);
 

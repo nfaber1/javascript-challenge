@@ -31,18 +31,18 @@ function runEnter() {
 
   d3.event.preventDefault();
 
-  var inputElement = d3.select("#form-control");
+  var inputElement = d3.select("#datetime").property("value");
 
-  var inputValue = inputElement.property("value");
+  console.log(inputElement);
 
-  console.log(inputValue);
+  // d3.select("h1>span").text(inputValue);
 
-  var filteredData = tableData.filter(ufoSightings => ufoSightings.datetime === inputValue);
+  var filteredData = tableData.filter(ufoSightings => ufoSightings.datetime === inputElement);
 
-  console.log(filteredData);
+  // console.log(filteredData);
 
-  d3.select("tbody").html("")
+  // d3.select("tbody").html("")
 
-  renderTable(filteredData);
+  // renderTable(filteredData);
 
 };
